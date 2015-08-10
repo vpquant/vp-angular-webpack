@@ -3,7 +3,7 @@ const APP = __dirname + '/app'
 
 var config = {
     context: APP,
-    entry: './index.js',
+    entry: './app.js',
     output: {
         path: APP,
         filename: 'bundle.js'
@@ -20,6 +20,7 @@ var config = {
             { test: /\.js$/, loader: 'ng-annotate!babel', exclude: /node_modules/},
             { test: /\.html$/, loader: 'raw'},
             { test: /\.css$/, loader: 'style!css?sourceMap'},
+            { test: /\.styl$/, loader: 'style!css!stylus' },
 
             { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
             { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
